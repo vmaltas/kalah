@@ -17,7 +17,7 @@ import java.util.UUID;
 @RequestMapping(path = "/games", produces = "application/json")
 public class KalahController {
 
-    protected String url = "http://localhost:443/";
+    protected String url = "http://localhost:8080/";
     protected int maxGameSlot = 9999;
     protected int playerOneHouse = 7;
     protected int playerTwoHouse = 14;
