@@ -35,9 +35,11 @@ public class KalahControllerTests {
 
     @Before
     public void createGame() throws Exception {
-        MvcResult result = mockMvc.perform(post("/games/")).andReturn();
-        String content = result.getResponse().getContentAsString();
-        gameId = content.substring(content.indexOf("id") + 5, content.indexOf("id") + 9);
+        if(gameId == null) {
+            MvcResult result = mockMvc.perform(post("/games/")).andReturn();
+            String content = result.getResponse().getContentAsString();
+            gameId = content.substring(content.indexOf("id") + 5, content.indexOf("id") + 9);
+        }
     }
 
     @Test
