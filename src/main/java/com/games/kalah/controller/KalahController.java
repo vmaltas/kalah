@@ -87,7 +87,7 @@ public class KalahController {
     }
 
 
-    private HashMap<Integer, Integer> initializeBoard() {
+    public HashMap<Integer, Integer> initializeBoard() {
 
         HashMap<Integer, Integer> currentBoard = new HashMap<>();
         for (int i = 1; i <= playerTwoHouse; i++) {
@@ -100,7 +100,7 @@ public class KalahController {
         return currentBoard;
     }
 
-    private KalahBoard sowPits(KalahBoard currentBoard, Integer pitId, String gameId) {
+    public KalahBoard sowPits(KalahBoard currentBoard, Integer pitId, String gameId) {
 
         EPlayer currentPlayer = currentBoard.getTurn();
         HashMap<Integer, Integer> pits = currentBoard.getBoard();
@@ -168,11 +168,11 @@ public class KalahController {
         return currentBoard;
     }
 
-    private EPlayer swapPlayer(EPlayer currentPlayer) {
+    public EPlayer swapPlayer(EPlayer currentPlayer) {
         return currentPlayer.equals(EPlayer.Player1) ? EPlayer.Player2 : EPlayer.Player1;
     }
 
-    private boolean checkIfLastRound(KalahBoard kalahBoard, EPlayer currentPlayer) {
+    public boolean checkIfLastRound(KalahBoard kalahBoard, EPlayer currentPlayer) {
         boolean lastRound = true;
         if (currentPlayer.equals(EPlayer.Player1)) {
             for (int i = 1; i < playerOneHouse; i++) {
@@ -192,7 +192,7 @@ public class KalahController {
         return lastRound;
     }
 
-    private KalahBoard getOpponentsAllSeeds(KalahBoard kalahBoard, EPlayer currentPlayer) {
+    public KalahBoard getOpponentsAllSeeds(KalahBoard kalahBoard, EPlayer currentPlayer) {
 
         int seedInHand = 0;
         if (currentPlayer.equals(EPlayer.Player1)) {
